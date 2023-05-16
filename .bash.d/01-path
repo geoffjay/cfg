@@ -1,0 +1,3 @@
+# vim:filetype=sh
+
+export PATH="$PATH:/usr/local/Cellar/postgresql@15/15.2_3/bin/"
