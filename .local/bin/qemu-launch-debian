@@ -1,0 +1,15 @@
+#!/bin/bash
+
+qemu-system-x86_64 \
+  -accel hvf \
+  -cpu Penryn,vendor=GenuineIntel \
+  -smp 2 \
+  -m 4G \
+  -device usb-tablet \
+  -vga virtio \
+  -display default,show-cursor=on \
+  -usb \
+  -device virtio-net,netdev=vmnic -netdev user,id=vmnic \
+  -audiodev coreaudio,id=coreaudio \
+  -device ich9-intel-hda -device hda-output,audiodev=coreaudio \
+  -drive file=$HOME/.qemu/disk/debian-bullseye.qcow2,if=virtio

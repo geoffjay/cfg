@@ -1,0 +1,16 @@
+#!/bin/bash
+
+qemu-system-x86_64 \
+  -accel hvf \
+  -cpu Penryn,vendor=GenuineIntel \
+  -smp 2 \
+  -m 4G \
+  -usb \
+  -device usb-tablet \
+  -vga virtio \
+  -display cocoa,show-cursor=on \
+  -device virtio-net,netdev=vmnic -netdev user,id=vmnic \
+  -audiodev coreaudio,id=coreaudio \
+  -device ich9-intel-hda -device hda-output,audiodev=coreaudio \
+  -cdrom $HOME/Downloads/debian-11.3.0-amd64-netinst.iso \
+  -drive file=$HOME/.qemu/disk/debian-bullseye.qcow2,if=virtio
