@@ -1,12 +1,12 @@
 # vim:ft=zsh:set ts=2 sw=2:
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -100'"
 
-bind -x '"\C-p": vim $(fzf);'
+bindkey -x '"\C-p": vim $(fzf);'
 
 _fzf_find_edit() {
   local file=$(
