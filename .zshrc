@@ -30,7 +30,7 @@ fi
 eval "$(starship init zsh)"
 
 # shell bindings
-bindkey "set show-all-if-ambiguous on"
+#bindkey "set show-all-if-ambiguous on"
 #bindkey "TAB:menu-complete"
 
 # direnv hook
