@@ -1,0 +1,3 @@
+#!/bin/bash
+
+xfreerdp /u:cap /v:192.168.1.87:3389 /cert-ignore /auto-reconnect-max-retries:0 /smart-sizing +clipboard /home-drive

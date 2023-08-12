@@ -1,0 +1,16 @@
+# vim:ft=zsh
+
+# node / js / ts
+eval "$(nodenv init -)"
+
+# python
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# go
+export PATH="$HOME/go/bin:$PATH"
+export GO111MODULE="on"
+
+# rust
+export PATH="$HOME/.cargo/bin:$PATH"
+. "$HOME/.cargo/env"

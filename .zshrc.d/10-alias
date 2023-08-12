@@ -32,6 +32,10 @@ alias free="free -m"                      # show sizes in MB
 alias mkae="make"
 alias ivm="vim"
 
+if [[ -x `which bat` ]]; then
+  alias cat="bat --theme Nord"
+fi
+
 logcmd() {
   echo -e "\e[91m$@\e[0m"
   "$@"

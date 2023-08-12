@@ -78,11 +78,11 @@ if [[ -d ~/.bash.d ]]; then
   done
 fi
 
-# vim: set ts=2 sw=2:
-
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then
   export KITTY_SHELL_INTEGRATION="enabled"
   source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"
 fi
 # END_KITTY_SHELL_INTEGRATION
+
+# vim: set ts=2 sw=2:

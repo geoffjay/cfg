@@ -43,7 +43,7 @@ Pry.config.prompt = Pry::Prompt.new(
   ],
 )
 
-if Rails.env.test?
+if self.class.const_defined?("Rails") && Rails.env.test?
   default_prompt = Pry::Prompt[:default]
   env = Pry::Helpers::Text.red(Rails.env.upcase)
   Pry.config.prompt = Pry::Prompt.new(
