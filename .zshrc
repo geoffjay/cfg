@@ -17,6 +17,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # configuration is managed through git with an alias to set the working directory
 export CFGDIR=$HOME/.cfg
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
+alias cfg="config"
 
 # shell setup
 if test -n "$KITTY_INSTALLATION_DIR"; then
