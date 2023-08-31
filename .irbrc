@@ -1,22 +1,22 @@
 # vim:filetype=ruby
 
-BLACK = "\001\e[0;30m\002"
-RED = "\001\e[0;31m\002"
-GREEN = "\001\e[0;32m\002"
-YELLOW = "\001\e[0;33m\002"
-BLUE = "\001\e[0;34m\002"
-MAGENTA = "\001\e[0;35m\002"
-CYAN = "\001\e[0;36m\002"
-WHITE = "\001\e[0;37m\002"
-RESET = "\001\e[0m\002"
+BLACK = "\001\e[0;30m\002".freeze
+RED = "\001\e[0;31m\002".freeze
+GREEN = "\001\e[0;32m\002".freeze
+YELLOW = "\001\e[0;33m\002".freeze
+BLUE = "\001\e[0;34m\002".freeze
+MAGENTA = "\001\e[0;35m\002".freeze
+CYAN = "\001\e[0;36m\002".freeze
+WHITE = "\001\e[0;37m\002".freeze
+RESET = "\001\e[0m\002".freeze
 
-BOLD = "\001\e[1m\002"
-UNDERLINE = "\001\e[4m\002"
-BLINK = "\001\e[5m\002"
-REVERSE = "\001\e[7m\002"
-CONCEALED = "\001\e[8m\002"
-PLAIN = "\001\e[0m\002"
-ITALIC = "\001\e[3m\002"
+BOLD = "\001\e[1m\002".freeze
+UNDERLINE = "\001\e[4m\002".freeze
+BLINK = "\001\e[5m\002".freeze
+REVERSE = "\001\e[7m\002".freeze
+CONCEALED = "\001\e[8m\002".freeze
+PLAIN = "\001\e[0m\002".freeze
+ITALIC = "\001\e[3m\002".freeze
 
 def rails_prompt
   def_prompt = "[#{MAGENTA}%01n#{RESET}]"
@@ -46,4 +46,11 @@ def rails_prompt
   IRB.conf[:PROMPT_MODE] = :CUSTOM
 end
 
-rails_prompt
+if ENV.fetch("RAILS_ENV", nil)
+  rails_prompt
+
+  # IRB.conf[:IRB_RC] = Proc.new do
+  #   logger = Logger.new(STDOUT)
+  #   ActiveRecord::Base.logger = logger
+  # end
+end

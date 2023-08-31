@@ -35,7 +35,7 @@ eval "$(starship init zsh)"
 #bindkey "TAB:menu-complete"
 
 # direnv hook
-eval "$(direnv hook bash)"
+eval "$(direnv hook zsh)"
 
 # dev hook
 eval "$(dev _env)";

@@ -40,16 +40,10 @@
 # $character
 # """
 
-format = """
-$directory\
-$git_branch\
-$git_status\
-$line_break\
-$character
-"""
+format = "$directory$character"
 
 # only works with certain shells
-right_format = "$time"
+right_format = "$git_status$git_branch"
 
 [time]
 disabled = false
@@ -79,8 +73,8 @@ format = "[$time]($style)"
 # error_symbol = "[ \uE007 ](bg:#4C566A fg:#BF616A)[\uE0BC](fg:#4C566A)"
 
 [character]
-success_symbol = "[ \uE007](fg:#ECEFF4)"
-error_symbol = "[ \uE007](fg:#ECEFF4)"
+success_symbol = "[#](fg:#ECEFF4)"
+error_symbol = "[#](fg:#BF616A)"
 
 # system
 
@@ -114,7 +108,7 @@ truncation_symbol = "…/"
 
 [git_branch]
 symbol = "\uE0A0"
-format = "[on](fg:#ECEFF4) [$symbol $branch ](bold fg:#B48EAD)"
+format = "(fg:#ECEFF4) [$symbol $branch ](bold fg:#B48EAD)[\ueb10](bold fg:#A3BE8C)"
  
 [git_metrics]
 disabled = false
@@ -134,7 +128,7 @@ disabled = false
 # deleted = "🗑 $count "
 
 [git_status]
-format = "[\ueb10](bold fg:#A3BE8C) [($all_status$ahead_behind)]($style)[\ueb10](bold fg:#A3BE8C) "
+format = "[\ueb10](bold fg:#A3BE8C) [($all_status$ahead_behind)]($style)[\ueb10](bold fg:#A3BE8C)"
 style = "bold fg:#D08770"
 conflicted = "[\uf4dc](bold fg:#BF616A) $count "
 ahead = "[\uf431](bold fg:#81A1C1) $count "
