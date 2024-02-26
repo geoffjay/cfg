@@ -54,3 +54,26 @@ if ENV.fetch("RAILS_ENV", nil)
   #   ActiveRecord::Base.logger = logger
   # end
 end
+
+debug = ENV.fetch("IRB_DEBUG", nil)
+
+if debug
+  puts(<<~DEBUG)
+
+    #{RED}IRB_DEBUG#{RESET}
+
+    #{GREEN}Loaded:#{RESET}     #{__FILE__}
+    #{GREEN}Rails:#{RESET}      #{defined?(Rails) ? Rails.env : 'not loaded'}
+    #{GREEN}FactoryBot:#{RESET} #{defined?(FactoryBot) ? 'loaded' : 'not loaded'}
+    #{GREEN}Faker:#{RESET}      #{defined?(Faker) ? 'loaded' : 'not loaded'}
+    #{GREEN}Directory:#{RESET}  #{Dir.pwd}
+
+  DEBUG
+end
+
+project_irbrc = File.join(Dir.pwd, ".irbrc")
+
+if File.exist?(project_irbrc)
+  puts "Loading: #{project_irbrc}\n" if debug
+  load project_irbrc
+end

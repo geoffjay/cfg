@@ -43,7 +43,9 @@
 format = "$directory$character"
 
 # only works with certain shells
-right_format = "$git_status$git_branch"
+right_format = "$python$git_status$git_branch"
+
+# add_newline = false
 
 [time]
 disabled = false
@@ -173,18 +175,11 @@ symbol = "\uE718"
 style = "fg:#81A1C1"
 format = "/ [$symbol]($style) "
  
-# [python]
-# symbol = "\uE73C "
-# pyenv_version_name = true
-# style = "bg:#81A1C1 fg:#4C566A"
-# format = "[ $symbol(${version} )]($style)"
- 
 [python]
 symbol = "\uE73C"
 pyenv_version_name = true
 style = "fg:#A3BE8C"
-# style = "bold fg:#A3BE8C"
-format = "/ [$symbol]($style) "
+format = "[ $symbol (${version})]($style) "
  
 [rust]
 symbol = "\uE7A8 "

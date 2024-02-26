@@ -32,8 +32,11 @@ alias free="free -m"                      # show sizes in MB
 alias mkae="make"
 alias ivm="vim"
 
+# helpers
+alias cheat='f() { curl cheat.sh/$1 };f'
+
 if [[ -x `which bat` ]]; then
-  alias cat="bat --theme Nord"
+  alias cat="bat --theme ansi"
 fi
 
 logcmd() {

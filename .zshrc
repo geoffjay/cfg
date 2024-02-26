@@ -51,3 +51,6 @@ if [ -d "$HOME/.zshrc.d" ]; then
     [ -f $file ] && source $file
   done
 fi
+
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc

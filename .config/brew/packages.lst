@@ -1,0 +1,80 @@
+act: Run your GitHub Actions locally
+ansible: Automate deployment, configuration, and upgrading
+arduino-cli: Arduino command-line interface
+arm-none-eabi-gcc: GNU compiler collection for arm-none-eabi
+ast-grep: Code searching, linting, rewriting
+automake: Tool for generating GNU Standards-compliant Makefiles
+aws-iam-authenticator: Use AWS IAM credentials to authenticate to Kubernetes
+awscli: Official Amazon AWS command-line interface
+bash-completion@2: Programmable completion for Bash 4.2+
+bat: Clone of cat(1) with syntax highlighting and Git integration
+bazel: Google's own build tool
+bottom: Yet another cross-platform graphical process/system monitor
+bzip2: Freely available high-quality data compressor
+timer: Timer is like sleep, but reports progress.
+ccls: C/C++/ObjC language server
+certbot: Tool to obtain certs from Let's Encrypt and autoenable HTTPS
+cmake: Cross-platform make
+csound: Sound and music computing system
+czmq: High-level C binding for ZeroMQ
+d2: Modern diagram scripting language that turns text to diagrams
+direnv: Load/unload environment variables based on $PWD
+dive: Tool for exploring each layer in a docker image
+dprint: Pluggable and configurable code formatting platform written in Rust
+efm-langserver: General purpose Language Server
+elixir: Functional metaprogramming aware language built on Erlang VM
+fd: Simple, fast and user-friendly alternative to find
+findutils: Collection of GNU find, xargs, and locate
+flyctl: Command-line tools for fly.io services
+fontforge: Command-line outline and bitmap font editor/converter
+freerdp: X11 implementation of the Remote Desktop Protocol (RDP)
+gh: GitHub command-line tool
+gimme-aws-creds: CLI to retrieve AWS credentials from Okta
+git: Distributed revision control system
+git-chglog: CHANGELOG generator implemented in Go (Golang).
+git-secret: Bash-tool to store the private data inside a git repo
+gnome-common: Core files for GNOME
+go: Open source programming language to build simple/reliable/efficient software
+go@1.14: Go programming environment (1.14)
+go@1.17: Go programming environment (1.17)
+gobject-introspection: Generate introspection data for GObject libraries
+buffalo: 
+gtk-doc: GTK+ documentation tool
+gtk4: Toolkit for creating graphical user interfaces
+gtksourceview4: Text view with syntax, undo/redo, and text marks
+htop: Improved top (interactive process viewer)
+http-prompt: Interactive command-line HTTP client with autocomplete and syntax highlighting
+httpie: User-friendly cURL replacement (command-line HTTP client)
+hub: Add GitHub support to git on the command-line
+imagemagick@6: Tools and libraries to manipulate images in many formats
+jq: Lightweight and flexible command-line JSON processor
+json-glib: Library for JSON, based on GLib
+jsonlint: JSON parser and validator with a CLI
+krakend: Ultra-High performance API Gateway built in Go
+lab: Git wrapper for GitLab
+launchctl-completion: Bash completion for Launchctl
+lazygit: Simple terminal UI for git commands
+libdazzle: GNOME companion library to GObject and Gtk+
+libedit: BSD-style licensed readline alternative
+libiconv: Conversion library
+libpq: Postgres C API library
+libxslt: C XSLT library for GNOME
+libzip: C library for reading, creating, and modifying zip archives
+llvm@13: Next-gen compiler infrastructure
+localstack: Fully functional local AWS cloud stack
+lua@5.3: Powerful, lightweight programming language
+luarocks: Package manager for the Lua programming language
+meson: Fast and user friendly build system
+moreutils: Collection of tools that nobody wrote when UNIX was young
+mosquitto: Message broker implementing the MQTT protocol
+moto: Mock AWS services
+mysql-client@5.7: Open source relational database management system
+mysql@5.7: Open source relational database management system
+ncdu: NCurses Disk Usage
+neofetch: Fast, highly customisable system info script
+neovim: Ambitious Vim-fork focused on extensibility and agility
+newman: Command-line collection runner for Postman
+nghttp2: HTTP/2 C Library
+nmap: Port scanning utility for large networks
+nodenv: Manage multiple NodeJS versions
+okta-aws-cli: Okta federated identity for AWS CLI
