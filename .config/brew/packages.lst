@@ -78,3 +78,52 @@ nghttp2: HTTP/2 C Library
 nmap: Port scanning utility for large networks
 nodenv: Manage multiple NodeJS versions
 okta-aws-cli: Okta federated identity for AWS CLI
+openapi-generator: Generate clients, server & docs from an OpenAPI spec (v2, v3)
+overmind: Process manager for Procfile-based applications and tmux
+packer: Tool for creating identical machine images for multiple platforms
+picocom: Minimal dumb-terminal emulation program
+platformio: Your Gateway to Embedded Software Development Excellence
+postgresql@14: Object-relational database system
+postgresql@15: Object-relational database system
+pre-commit: Framework for managing multi-language pre-commit hooks
+princexml: [no description]
+protobuf-c: Protocol buffers library
+pulumi: Cloud native development platform
+pyenv-virtualenv: Pyenv plugin to manage virtualenv
+ranger: File browser
+rbenv: Ruby version manager
+rbspy: Sampling profiler for Ruby
+redis: Persistent key-value database, with built-in net interface
+rename: Perl-powered file rename script with many helpful built-ins
+ripgrep: Search tool like grep and The Silver Searcher
+rust: Safe, concurrent, practical language
+rust-analyzer: Experimental Rust compiler front-end for IDEs
+rustup-init: Rust toolchain installer
+saml2aws: Login and retrieve AWS temporary credentials using a SAML IDP
+sassc: Wrapper around libsass that helps to create command-line apps
+sonar-scanner: Launcher to analyze a project with SonarQube
+sonarqube: Manage code quality
+starship: Cross-shell prompt for astronauts
+stripe: Stripe CLI utility
+stylua: Opinionated Lua code formatter
+subversion: Version control system designed to be a better CVS
+swagger-codegen: Generate clients, server stubs, and docs from an OpenAPI spec
+swig: Generate scripting interfaces to C/C++ code
+tcpdump: Command-line packet analyzer
+tepl: GNOME Text Editor Product Line
+terraform: Tool to build, change, and version infrastructure
+tokei: Program that allows you to count code, quickly
+tree: Display directories as trees (with optional color/HTML output)
+universal-ctags: Maintained ctags implementation
+unused: Identify potentially unused code
+v8: Google's JavaScript engine
+v8@3.15: Google's open source JavaScript engine
+vala: Compiler for the GObject type system
+watchman: Watch files and take action when they change
+wget: Internet file retriever
+xdotool: Fake keyboard/mouse input and window management for X
+yq: Process YAML, JSON, XML, CSV and properties documents from the CLI
+zlib: General-purpose lossless data-compression library
+zoxide: Shell extension to navigate your filesystem faster
+zsh-autosuggestions: Fish-like fast/unobtrusive autosuggestions for zsh
+zsh-syntax-highlighting: Fish shell like syntax highlighting for zsh
