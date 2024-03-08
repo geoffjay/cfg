@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "ansible-language-server": "^0.1.1-0",
+    "bash-language-server": "^3.0.3",
+    "bower": "^1.8.12",
+    "c4builder": "^0.2.16",
+    "create-astro": "^1.0.1",
+    "create-expo-app": "^2.1.1",
+    "create-next-app": "^13.2.4",
+    "create-react-app": "^5.0.1",
+    "create-vite": "^4.4.1",
+    "cssmodules-language-server": "^1.2.1",
+    "deadfile": "^2.1.0",
+    "grunt-cli": "^1.4.3",
+    "nx": "^13.9.4",
+    "retire": "^3.0.7",
+    "serve": "^14.2.0",
+    "typescript": "^4.4.3",
+    "typescript-language-server": "^0.10.1",
+    "yaml-language-server": "^1.4.0"
+  }
+}
