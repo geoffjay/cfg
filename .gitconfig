@@ -21,6 +21,7 @@
   r-i-m = rebase -i master
   r-i-d = rebase -i develop
   st = status
+  ; log aliases
   lg1 = \
     !"f() { \
       COMMIT=\"%C(bold blue)%h%C(reset)\"; \
@@ -44,7 +45,10 @@
     }; f"
   lg = !"git lg1"
   ll = "log --graph --format=\"%C(yellow)%h%C(red)%d%C(reset) - %C(bold green)(%ar)%C(reset) %s %C(blue)<%an>%C(reset)\""
+  dlog = "!f() { GIT_EXTERNAL_DIFF=difft git log -p --ext-diff $@; }; f"
+  ; diff aliases
   d = difftool
+  dft = difftool
   ls-subtrees = !"git log | grep git-subtree-dir | awk '{ print $2 }'"
   changed-files = \
     !"f() { \
@@ -130,13 +134,26 @@
 [push]
   default = simple
 
+; [diff]
+;   tool = vimdiff
+;
+; [difftool]
+;   prompt = false
+;
+; [difftool "diffpdf"]
+;   cmd = diffpdf \"$LOCAL\" \"$REMOTE\"
+
 [diff]
-  tool = vimdiff
+  tool = difftastic
 
 [difftool]
   prompt = false
 
-[difftool "diffpdf"]
-  cmd = diffpdf \"$LOCAL\" \"$REMOTE\"
+[difftool "difftastic"]
+  cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+  difftool = true
+
 [credential]
 	helper = cache
