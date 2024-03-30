@@ -18,6 +18,7 @@
     pkgs.clang
     pkgs.curl
     pkgs.dejavu_fonts
+    pkgs.direnv
     pkgs.kitty
     pkgs.nerdfonts
     pkgs.powerline-fonts
@@ -54,20 +55,8 @@
     # '';
   };
 
-  # Home Manager can also manage your environment variables through
-  # 'home.sessionVariables'. If you don't want to manage your shell through Home
-  # Manager then you have to manually source 'hm-session-vars.sh' located at
-  # either
-  #
-  #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
-  #
-      # Installations with additional options. For the list of options, please refer to Zplug README.
-  # or
-  #
-  #  /etc/profiles/per-user/cap/etc/profile.d/hm-session-vars.sh
-  #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "vim";
     CFGDIR = "$HOME/.cfg/";
   };
 
@@ -96,14 +85,26 @@
 
   programs.zsh = {
     enable = true;
+    enableCompletion = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
+
     shellAliases = {
-      ll = "ls -l";
       update = "sudo nixos-rebuild switch";
       hm-update = "NIXPKGS_ALLOW_UNFREE=1 home-manager switch";
       g = "git";
       v = "vim";
-      cfg = "/home/cap/.nix-profile/bin/git --git-dir=$CFGDIR --work-tree=$HOME";
+      config = "/home/cap/.nix-profile/bin/git --git-dir=$CFGDIR --work-tree=$HOME";
+      cfg = "config";
     };
+
+    initExtra = ''
+      source $HOME/.zshrc.extra
+    '';
+
+    history.size = 10000;
+    history.path = "${config.xdg.dataHome}/zsh/history";
+
     zplug = {
       enable = true;
       plugins = [
