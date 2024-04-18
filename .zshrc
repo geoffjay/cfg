@@ -10,9 +10,12 @@ compinit
 
 # source plugins, install with
 #  brew install zsh-autosuggestions
+#  brew install zsh-completions
 #  brew install zsh-syntax-highlighting
+
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fpath+=/usr/local/share/zsh-completions
 
 # configuration is managed through git with an alias to set the working directory
 export CFGDIR=$HOME/.cfg
@@ -53,4 +56,5 @@ if [ -d "$HOME/.zshrc.d" ]; then
 fi
 
 zstyle ':completion:*' menu select
+
 fpath+=~/.zfunc
