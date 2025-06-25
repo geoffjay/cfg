@@ -16,7 +16,7 @@ the command `config` is used to alias all typical `git` usage.
 To pull configuration and backup any existing files
 
 ```shell
-git clone --bare https://github.com/geoffjay/cfg.git $HOME/.cfg
+git clone --single-branch --branch nixos --bare https://github.com/geoffjay/cfg.git $HOME/.cfg
 mkdir -p .config-backup
 config checkout
 if [ $? = 0 ]; then
