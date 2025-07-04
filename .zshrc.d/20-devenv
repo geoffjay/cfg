@@ -1,19 +1,23 @@
 # vim:ft=zsh
 
 # node / js / ts
-eval "$(nodenv init -)"
+if [[ -x $(which nodenv) ]]; then
+  eval "$(nodenv init -)"
+fi
 
 # python
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+if [[ -x $(which pyenv) ]]; then
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
 
 # go
 export PATH="$HOME/go/bin:$PATH"
 export GO111MODULE="on"
 
 # rust
-export PATH="$HOME/.cargo/bin:$PATH"
-. "$HOME/.cargo/env"
+#export PATH="$HOME/.cargo/bin:$PATH"
+#. "$HOME/.cargo/env"
 
 # raspberry pi pico
 export PICO_SDK_PATH="$HOME/.local/share/pico-sdk"

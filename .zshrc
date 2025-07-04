@@ -8,14 +8,20 @@ bindkey -e
 autoload -Uz compinit
 compinit
 
-# source plugins, install with
-#  brew install zsh-autosuggestions
-#  brew install zsh-completions
-#  brew install zsh-syntax-highlighting
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+	export ZSH_PREFIX="/usr/share"
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+	export ZSH_PREFIX="/usr/local/share"
+fi
 
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fpath+=/usr/local/share/zsh-completions
+# source plugins
+# - zsh-autosuggestions
+# - zsh-completions
+# - zsh-syntax-highlighting
+
+source $ZSH_PREFIX/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH_PREFIX/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fpath+=$ZSH_PREFIX/zsh-completions
 
 # configuration is managed through git with an alias to set the working directory
 export CFGDIR=$HOME/.cfg
@@ -38,11 +44,15 @@ eval "$(starship init zsh)"
 #bindkey "TAB:menu-complete"
 
 # direnv hook
-eval "$(direnv hook zsh)"
+if [[ -x $(which direnv) ]]; then
+  eval "$(direnv hook zsh)"
+fi
 
 # dev hook
-eval "$(dev _env)";
-eval "$(dev _hook)"
+if [[ -x $(which dev) ]]; then
+	eval "$(dev _env)";
+	eval "$(dev _hook)"
+fi
 
 # path
 export PATH="$HOME/.local/bin:$PATH"
@@ -58,3 +68,5 @@ fi
 zstyle ':completion:*' menu select
 
 fpath+=~/.zfunc
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
