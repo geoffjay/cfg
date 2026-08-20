@@ -40,12 +40,13 @@
 # $character
 # """
 
-format = "$directory$character"
+format = "$direnv$directory$character"
 
 # only works with certain shells
-right_format = "$python$git_status$git_branch"
+right_format = "$rust$c$golang$ruby$nodejs$python$git_status$git_branch"
 
 # add_newline = false
+command_timeout = 2000
 
 [time]
 disabled = false
@@ -70,13 +71,9 @@ format = "[$time]($style)"
 # color7 = "#A3BE8C"
 # color8 = "#B48EAD"
 
-# [character]
-# success_symbol = "[ \uE007 ](bg:#4C566A)[\uE0BC](fg:#4C566A)"
-# error_symbol = "[ \uE007 ](bg:#4C566A fg:#BF616A)[\uE0BC](fg:#4C566A)"
-
 [character]
-success_symbol = "[#](fg:#ECEFF4)"
-error_symbol = "[#](fg:#BF616A)"
+success_symbol = "[\u03BB](fg:#ECEFF4)"
+error_symbol = "[\u03BB](fg:#BF616A)"
 
 # system
 
@@ -84,16 +81,8 @@ error_symbol = "[#](fg:#BF616A)"
 show_always = true
 style_user = "bg:#4C566A"
 style_root = "bg:#4C566A"
-# format = "[ $user ]($style)[\uE0BC](bg:#BF616A fg:#4C566A)"
 format = "[    ]($style)[\uE0BC](bg:#BF616A fg:#4C566A)"
- 
-# [directory]
-# style = "bg:#BF616A"
-# format = "[ $path ]($style)[\uE0BE](bg:#BF616A fg:#D08770)"
-# truncate_to_repo = false
-# truncation_length = 3
-# truncation_symbol = "…/"
- 
+
 [directory]
 style = "bold fg:#81A1C1"
 format = "[ $path ]($style)"
@@ -103,90 +92,76 @@ truncation_symbol = "…/"
 
 # git
 
-# [git_branch]
-# symbol = "\uE0A0"
-# style = "bg:#D08770"
-# format = "[[ $symbol $branch ](bg:#D08770)]($style)"
-
 [git_branch]
 symbol = "\uE0A0"
-format = "(fg:#ECEFF4) [$symbol $branch ](bold fg:#B48EAD)[\ueb10](bold fg:#A3BE8C)"
- 
+format = "(fg:#ECEFF4) [$symbol $branch ](bold fg:#B48EAD)[\ueb04](bold fg:#A3BE8C)"
+
 [git_metrics]
 disabled = false
 
-# [git_status]
-# format = "[($all_status$ahead_behind)]($style)[\uE0BC](bg:#81A1C1 fg:#D08770)"
-# style = "bg:#D08770"
-# conflicted = "👿 $count "
-# ahead = "⇡ $count "
-# behind = "⇣ $count "
-# diverged = " $count "
-# untracked = "🤷‍ $count "
-# stashed = "📦 $count "
-# modified = "פֿ $count "
-# staged = "+ $count "
-# renamed = " $count "
-# deleted = "🗑 $count "
-
 [git_status]
-format = "[\ueb10](bold fg:#A3BE8C) [($all_status$ahead_behind)]($style)[\ueb10](bold fg:#A3BE8C)"
+format = "[\ueb04](bold fg:#A3BE8C) [($all_status$ahead_behind)]($style)[\ueb04](bold fg:#A3BE8C)"
 style = "bold fg:#D08770"
-conflicted = "[\uf4dc](bold fg:#BF616A) $count "
-ahead = "[\uf431](bold fg:#81A1C1) $count "
-behind = "[\uf433](bold fg:#81A1C1) $count "
-diverged = "[\uf418](bold fg:#EBCB8B) $count "
-untracked = "[\uf4d6](bold fg:#EBCB8B) $count "
-stashed = "[\uf487](bold fg:#ECEFF4) $count "
-modified = "[\uf4d2](bold fg:#A3BE8C) $count "
-staged = "[\uf4d0](bold fg:#A3BE8C) $count "
-renamed = "[\uf4d6](bold fg:#BF616A) $count "
-deleted = "[\uf48e](bold fg:#BF616A) $count "
+conflicted = "[\uebda](bold fg:#BF616A) $count "
+ahead = "[\uF431](bold fg:#81A1C1) $count "
+behind = "[\uF433](bold fg:#81A1C1) $count "
+diverged = "[\uF418](bold fg:#EBCB8B) $count "
+untracked = "[\uF4DC](bold fg:#EBCB8B) $count "
+stashed = "[\uF4dd](bold fg:#ECEFF4) $count "
+modified = "[\uF4D2](bold fg:#A3BE8C) $count "
+staged = "[\uF4D0](bold fg:#A3BE8C) $count "
+renamed = "[\uF4DC](bold fg:#BF616A) $count "
+deleted = "[\uF48E](bold fg:#BF616A) $count "
+
+[direnv]
+symbol = "\uec10"
+format = "[ $symbol](fg:#A3BE8C)"
+disabled = false
 
 # languages
 
 [c]
-symbol = "© "
+symbol = "©"
 style = "bg:#81A1C1 fg:#4C566A"
-format = "[ $symbol]($style)"
- 
+format = "[$symbol (${version})]($style) "
+
 [elixir]
-symbol = "\uE62D "
+symbol = "\uE62D"
 style = "bg:#81A1C1 fg:#4C566A"
-format = "[ $symbol]($style)"
- 
+format = "[$symbol (${version})]($style) "
+
 [elm]
-symbol = "\uE62C "
+symbol = "\uE62C"
 style = "bg:#81A1C1 fg:#4C566A"
-format = "[ $symbol]($style)"
- 
+format = "[$symbol (${version})]($style) "
+
 [golang]
-symbol = "\uE627 "
-style = "bg:#81A1C1 fg:#4C566A"
-format = "[ $symbol]($style)"
- 
+symbol = "\uE627"
+style = "fg:#81A1C1"
+format = "[$symbol (${version})]($style) "
+
 [haskell]
-symbol = "\uE777 "
-style = "bg:#81A1C1 fg:#4C566A"
-format = "[ $symbol]($style)"
- 
+symbol = "\uE777"
+style = "bg:#EBCB8B"
+format = "[$symbol (${version})]($style) "
+
 [nodejs]
 symbol = "\uE718"
-style = "fg:#81A1C1"
-format = "/ [$symbol]($style) "
- 
+style = "fg:#D08770"
+format = "[$symbol (${version})]($style) "
+
 [python]
-symbol = "\uE73C"
+symbol = "\uE235"
 pyenv_version_name = true
 style = "fg:#A3BE8C"
-format = "[ $symbol (${version})]($style) "
- 
+format = "[$symbol (${version}) ($virtualenv)]($style) "
+
 [rust]
-symbol = "\uE7A8 "
-style = "bg:#81A1C1 fg:#4C566A"
-format = "[ $symbol]($style)"
- 
-[ruby]
-symbol = "\uE739"
+symbol = "\ue68b"
 style = "fg:#BF616A"
-format = "/ [$symbol]($style) "
+format = "[$symbol (${version})]($style) "
+
+[ruby]
+symbol = "\uE23e"
+style = "fg:#BF616A"
+format = "[$symbol (${version})]($style) "

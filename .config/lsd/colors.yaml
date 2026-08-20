@@ -1,0 +1,38 @@
+user: rgb_(220,165,97)
+group: rgb_(220,165,97)
+permission:
+  read: rgb_(118,148,106)
+  write: rgb_(220,165,97)
+  exec: rgb_(195,64,67)
+  exec-sticky: rgb_(149,127,184)
+  no-access: rgb_(54,54,70)
+  octal: rgb_(122,168,159)
+  acl: rgb_(122,168,159)
+  context: rgb_(106,149,137)
+date:
+  hour-old: rgb_(152,187,108)
+  day-old: rgb_(118,148,106)
+  older: rgb_(43,51,40)
+size:
+  none: rgb_(54,54,70)
+  small: rgb_(230,195,132)
+  medium: rgb_(255,160,102)
+  large: rgb_(228,104,118)
+inode:
+  valid: rgb_(149,127,184)
+  invalid: rgb_(54,54,70)
+links:
+  valid: rgb_(149,127,184)
+  invalid: rgb_(54,54,70)
+tree-edge: rgb_(54,54,70)
+git-status:
+  default: rgb_(54,54,70)
+  unmodified: rgb_(54,54,70)
+  ignored: rgb_(54,54,70)
+  new-in-index: rgb_(118,148,106)
+  new-in-workdir: rgb_(118,148,106)
+  typechange: rgb_(220,165,97)
+  deleted: rgb_(195,64,67)
+  renamed: rgb_(118,148,106)
+  modified: rgb_(220,165,97)
+  conflicted: rgb_(195,64,67)

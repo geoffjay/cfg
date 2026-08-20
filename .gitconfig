@@ -14,6 +14,7 @@
   ci = commit -a
   co = checkout
   cop = checkout @{-1}
+  cod = co-default
   ; - = cop
   cl = clone
   r-m = rebase master
@@ -45,6 +46,8 @@
     }; f"
   lg = !"git lg1"
   ll = "log --graph --format=\"%C(yellow)%h%C(red)%d%C(reset) - %C(bold green)(%ar)%C(reset) %s %C(blue)<%an>%C(reset)\""
+  lo = log --oneline
+	lp = log --patch --follow
   dlog = "!f() { GIT_EXTERNAL_DIFF=difft git log -p --ext-diff $@; }; f"
   ; diff aliases
   d = difftool
@@ -88,6 +91,11 @@
       if [ \"$current\" != \"$default\" ]; then git x-fetch-branch $default; fi; \
     }; f"
   # branch helpers
+  co-default = \
+    !"f() { \
+      default=$(git x-branch-default); \
+      git checkout $default; \
+    }; f"
   mm = !"f() { git merge $(git x-branch-default); }; f"
   mc = "merge --continue"
   ma = "merge --abort"
@@ -104,6 +112,8 @@
       default=$(git x-branch-default); \
       git diff --name-only $current $(git merge-base $current $default); \
     }; f"
+  # random utils
+  rename = !"f() { [[ \"$#\" -eq 2 ]] && git mv $1 $(dirname $1)/$2 || exit 1; }; f"
 
 [core]
   whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
@@ -157,3 +167,19 @@
 
 [credential]
 	helper = cache
+[maintenance]
+	repo = /Users/geoff/clio/grow
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[hook "hk-pre-commit"]
+	command = test \"${HK:-1}\" = \"0\" || /opt/homebrew/bin/hk run pre-commit --from-hook \"$@\"
+	event = pre-commit

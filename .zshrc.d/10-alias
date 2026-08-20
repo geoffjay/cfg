@@ -1,11 +1,17 @@
 # vim:ft=zsh:set ts=2 sw=2:
 
-LS_OPTIONS="-F -v --group-directories-first --color=auto --time-style=+\"%d.%m.%Y %H:%M\""
+if [[ -x `which lsd` ]]; then
+  LS_OPTIONS="-F -v --group-directories-first --color=auto"
 
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  alias ls="ls ${LS_OPTIONS}"
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-  alias ls="gls ${LS_OPTIONS}"
+  alias ls="lsd ${LS_OPTIONS}"
+else
+  LS_OPTIONS="-F -v --group-directories-first --color=auto --time-style=+\"%d.%m.%Y %H:%M\""
+
+  if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    alias ls="ls ${LS_OPTIONS}"
+  elif [[ "$OSTYPE" == "darwin"* ]]; then
+    alias ls="gls ${LS_OPTIONS}"
+  fi
 fi
 
 alias l="ls ${LS_OPTIONS} -l"

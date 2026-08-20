@@ -3,5 +3,5 @@
 *~
 *.sw[op]
 
-*.tags
-tags
+/*.tags
+/tags
