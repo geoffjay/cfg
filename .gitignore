@@ -2,3 +2,11 @@
 !*.secret
 .env
 .env.gh
+
+.config/**/*.lock
+.config/**/*.log
+.config/**/*.mdb
+.config/gws/cache/
+.config/packer/plugins/
+.config/yarn/global/node_modules/
+.config/zed/conversations/

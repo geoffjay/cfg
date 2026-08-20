@@ -1,0 +1,78 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "edit_predictions": {
+    "provider": "zed"
+  },
+  "ui_font_family": "FiraCode Nerd Font",
+  "buffer_font_family": "FiraCode Nerd Font",
+  "terminal": {
+    "font_size": 12.0,
+    "font_family": "FiraCode Nerd Font"
+  },
+  "icon_theme": "Zed (Default)",
+  "agent": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4-thinking"
+    }
+  },
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry"
+    }
+  },
+  "language_models": {
+    "ollama": {
+      "api_url": "http://nixos.local:11434",
+      "available_models": [
+        {
+          "name": "qwen2.5-coder",
+          "max_tokens": 32768
+        },
+        {
+          "name": "deepseek-r1:8b",
+          "max_tokens": 32768
+        },
+        {
+          "name": "deepseek-r1:14b",
+          "max_tokens": 32768
+        }
+      ]
+    }
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "vim_mode": true,
+  "ui_font_size": 12,
+  "buffer_font_size": 12,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Kanagawa"
+  },
+  "context_servers": {
+    "mcp-server-context7": {
+      "settings": {
+        "default_minimum_tokens": "10000"
+      }
+    },
+    "mcp-server-overmind": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/geoffjay/mcp-servers#subdirectory=overmind",
+        "mcp-server-overmind"
+      ],
+      "settings": {}
+    }
+  }
+}

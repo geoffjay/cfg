@@ -1,0 +1,13 @@
+# font-family = "JetBrains Mono"
+font-family = "FiraCode Nerd Font Mono"
+theme = kanagawabones
+
+# Keybinds
+# Vertical split
+keybind = shift+enter=text:\x1b\r
+
+# Pane navigation
+keybind = cmd+left=text:\x02\x1b[D
+keybind = cmd+right=text:\x02\x1b[C
+keybind = cmd+up=text:\x02\x1b[A
+keybind = cmd+down=text:\x02\x1b[B
