@@ -1,6 +1,10 @@
 # vim:ft=zsh:set ts=2 sw=2:
 
+[[ -x "fabric-ai" ]] && return 1
+
 alias fabric="fabric-ai"
+
+[[ -d "$HOME/.config/fabric/patterns/" ]] && return 1
 
 # Loop through all files in the ~/.config/fabric/patterns directory
 for pattern_file in $HOME/.config/fabric/patterns/*; do

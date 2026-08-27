@@ -48,9 +48,16 @@ zstyle ':completion:*' menu select
 
 fpath+=~/.zfunc
 
-# add completions from zsh-completions and other custom ones
-fpath=($HOME/.zsh/zsh-completions/src $fpath)
-fpath=($HOME/.zsh/completions $fpath)
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+else
+  fpath=($HOME/.zsh/zsh-completions/src $fpath)
+fi
+
+[[ -d "$HOME/.zsh/completions" ]] && fpath=($HOME/.zsh/completions $fpath)
 
 eval "$(mise activate bash)"
 
