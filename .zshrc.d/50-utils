@@ -13,3 +13,5 @@ function batf() {
 if [[ -x `which bat` ]]; then
   alias tailf="batf"
 fi
+
+command -v pitchfork >/dev/null 2>&1 && alias pf="pitchfork"

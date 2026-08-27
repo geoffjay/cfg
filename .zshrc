@@ -87,3 +87,6 @@ eval "$(mise activate bash)"
 [[ -d "/opt/clio/bin/devxp" ]] && export PATH="/opt/clio/bin/devxp:$PATH"
 
 [[ -d "$HOME/.local/bin" ]] && export PATH="$HOME/.local/bin:$PATH"
+
+# Added by cua-driver-rs installer — see https://github.com/trycua/cua
+export PATH="/Users/geoff/.local/bin:$PATH"

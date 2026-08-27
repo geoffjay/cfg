@@ -7,6 +7,19 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "proxy": "",
+  "project_panel": {
+    "dock": "right"
+  },
+  "outline_panel": {
+    "dock": "right"
+  },
+  "collaboration_panel": {
+    "dock": "right"
+  },
+  "git_panel": {
+    "dock": "right"
+  },
   "edit_predictions": {
     "provider": "zed"
   },
@@ -18,6 +31,7 @@
   },
   "icon_theme": "Zed (Default)",
   "agent": {
+    "dock": "left",
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-sonnet-4-thinking"
@@ -30,7 +44,7 @@
   },
   "language_models": {
     "ollama": {
-      "api_url": "http://nixos.local:11434",
+      "api_url": "http://localhost:11434",
       "available_models": [
         {
           "name": "qwen2.5-coder",
@@ -56,7 +70,7 @@
   "buffer_font_size": 12,
   "theme": {
     "mode": "system",
-    "light": "One Light",
+    "light": "Kanagawa",
     "dark": "Kanagawa"
   },
   "context_servers": {
