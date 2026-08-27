@@ -34,9 +34,21 @@ bindkey -e
 autoload -Uz compinit
 compinit
 
-# source plugins, install from zsh-users repos
-source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+	export ZSH_PREFIX="/usr/share"
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+	export ZSH_PREFIX="/usr/local/share"
+fi
+
+# source plugins — prefer system share dirs, fall back to $HOME/.zsh clones
+if [[ -d "$ZSH_PREFIX/zsh-autosuggestions" ]]; then
+  source $ZSH_PREFIX/zsh-autosuggestions/zsh-autosuggestions.zsh
+  source $ZSH_PREFIX/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  fpath+=$ZSH_PREFIX/zsh-completions
+else
+  source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+  source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
 # configuration is managed through git with an alias to set the working directory
 export CFGDIR=$HOME/.cfg
@@ -54,6 +66,11 @@ fi
 # shell bindings
 #bindkey "set show-all-if-ambiguous on"
 #bindkey "TAB:menu-complete"
+
+# direnv hook
+if [[ -x $(which direnv) ]]; then
+  eval "$(direnv hook zsh)"
+fi
 
 export INITIAL_PATH=$PATH
 
@@ -75,6 +92,7 @@ if [ -d "$HOME/.zshrc.d" ]; then
 fi
 
 zstyle ':completion:*' menu select
+
 fpath+=~/.zfunc
 
 # add completions from zsh-completions and other custom ones
@@ -90,3 +108,5 @@ eval "$(mise activate bash)"
 
 # Added by cua-driver-rs installer — see https://github.com/trycua/cua
 export PATH="/Users/geoff/.local/bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
