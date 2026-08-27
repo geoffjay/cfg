@@ -1,6 +1,6 @@
 # vim:ft=zsh:set ts=2 sw=2:
 
-. "$HOME/.cargo/env"
+[[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 
 # source env config
 if [ -d "$HOME/.zshenv.d" ]; then

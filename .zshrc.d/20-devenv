@@ -6,8 +6,10 @@ if [[ -x $(which nodenv) ]]; then
 fi
 
 # dev hook
-eval "$(dev _env)"
-eval "$(dev _hook)"
+if [[ -x $(which dev) ]]; then
+  eval "$(dev _env)"
+  eval "$(dev _hook)"
+fi
 
 # python
 if [[ -x $(which pyenv) ]]; then
@@ -19,9 +21,16 @@ fi
 export PATH="$HOME/go/bin:$PATH"
 export GO111MODULE="on"
 
-# rust
-export PATH="$HOME/.cargo/bin:$PATH"
-. "$HOME/.cargo/env"
+# rustup shell setup
+# affix colons on either side of $PATH to simplify matching
+case ":${PATH}:" in
+    *:"$HOME/.cargo/bin":*)
+        ;;
+    *)
+        # Prepending path in case a system-installed rustc needs to be overridden
+        export PATH="$HOME/.cargo/bin:$PATH"
+        ;;
+esac
 
 # raspberry pi pico
 export PICO_SDK_PATH="$HOME/.local/share/pico-sdk"
