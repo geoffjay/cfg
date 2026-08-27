@@ -17,6 +17,8 @@ if [[ -x $(which pyenv) ]]; then
   eval "$(pyenv virtualenv-init -)"
 fi
 
+[[ -x $(which mise) ]] && eval "$(mise activate bash)"
+
 # go
 export PATH="$HOME/go/bin:$PATH"
 export GO111MODULE="on"
@@ -24,12 +26,12 @@ export GO111MODULE="on"
 # rustup shell setup
 # affix colons on either side of $PATH to simplify matching
 case ":${PATH}:" in
-    *:"$HOME/.cargo/bin":*)
-        ;;
-    *)
-        # Prepending path in case a system-installed rustc needs to be overridden
-        export PATH="$HOME/.cargo/bin:$PATH"
-        ;;
+  *:"$HOME/.cargo/bin":*)
+    ;;
+  *)
+    # Prepending path in case a system-installed rustc needs to be overridden
+    export PATH="$HOME/.cargo/bin:$PATH"
+    ;;
 esac
 
 # raspberry pi pico
