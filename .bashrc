@@ -86,3 +86,9 @@ fi
 # END_KITTY_SHELL_INTEGRATION
 
 # vim: set ts=2 sw=2:
+
+# ====== Clio dev (managed by `dev`) ======
+[ -f "$HOME/.clio/shellrc" ] && . "$HOME/.clio/shellrc"
+[[ -d "/opt/clio/bin/devxp" ]] && export PATH="/opt/clio/bin/devxp:$PATH"
+[[ -d "$HOME/.local/bin" ]] && export PATH="$HOME/.local/bin:$PATH"
+# ====== End Clio dev ======

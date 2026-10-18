@@ -11,6 +11,7 @@ bindkey -e
 
 [[ -f "$HOME/.zsh/util/path" ]] && source "$HOME/.zsh/util/path"
 [[ -f "$HOME/.zsh/util/plugins" ]] && source "$HOME/.zsh/util/plugins"
+[[ -f "$HOME/.zsh/util/docker" ]] && source "$HOME/.zsh/util/docker"
 [[ -f "$HOME/.zsh/util/kitty" ]] && source "$HOME/.zsh/util/kitty"
 [[ -f "$HOME/.zsh/util/llm-gateway" ]] && source "$HOME/.zsh/util/llm-gateway"
 
@@ -23,3 +24,9 @@ fi
 
 [[ -f "$HOME/.zsh/util/config" ]] && source "$HOME/.zsh/util/config"
 [[ -f "$HOME/.zsh/util/clio" ]] && source "$HOME/.zsh/util/clio"
+
+# ====== Clio dev (managed by `dev`) ======
+[ -f "$HOME/.clio/shellrc" ] && . "$HOME/.clio/shellrc"
+[[ -d "/opt/clio/bin/devxp" ]] && export PATH="/opt/clio/bin/devxp:$PATH"
+[[ -d "$HOME/.local/bin" ]] && export PATH="$HOME/.local/bin:$PATH"
+# ====== End Clio dev ======
